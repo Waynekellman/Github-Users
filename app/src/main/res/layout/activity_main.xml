@@ -13,6 +13,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="8dp"
+            android:background="@drawable/border"
             android:id="@+id/searchView"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

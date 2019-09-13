@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:background="@drawable/border">
     <TextView android:layout_width="wrap_content"
               android:layout_height="match_parent"
+              android:id="@+id/repo_name"
               android:layout_weight="8"
               android:textSize="18sp"
               android:layout_margin="4dp"
@@ -16,12 +18,16 @@
                   android:orientation="vertical">
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
+                  android:id="@+id/forks"
                   android:textSize="18sp"
-                  android:text="@string/_2_forks"/>
+                  android:text="@string/_2_forks"
+                  android:gravity="end"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
+                  android:id="@+id/stars"
                   android:textSize="18sp"
-                  android:text="@string/_5_stars"/>
+                  android:text="@string/_5_stars"
+                  android:gravity="end"/>
     </LinearLayout>
 
 </LinearLayout>
