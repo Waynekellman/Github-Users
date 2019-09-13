@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GithubUsers</string>
+    <string name="repo_01">Repo:01</string>
+    <string name="git_user">Git User</string>
+    <string name="username">UserName</string>
+    <string name="email">Email</string>
+    <string name="location">Location</string>
+    <string name="join_date">Join Date</string>
+    <string name="followers"># Followers</string>
+    <string name="following">following #</string>
+    <string name="this_is_their_biography_it_may_be_long_and_needs_to_all_fit">This is their biography. It may be long
+        and needs to all fit.
+    </string>
+    <string name="_2_forks">2 Forks</string>
+    <string name="_5_stars">5 stars</string>
+    <string name="reponame">RepoName</string>
+</resources>
