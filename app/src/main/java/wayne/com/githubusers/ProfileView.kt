@@ -27,7 +27,6 @@ class ProfileView : AppCompatActivity() {
         setContentView(R.layout.profile_view)
         recyclerView_profile.layoutManager = LinearLayoutManager(this)
         recyclerView_profile.adapter = adapter
-        val Intent = intent
         val profileName = intent.getStringExtra("name")
 
         val service = retrofit.create(GithubAPI::class.java)

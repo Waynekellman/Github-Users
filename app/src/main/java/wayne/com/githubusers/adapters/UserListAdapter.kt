@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.user_item.view.*
-import wayne.com.githubusers.GithubWebView
 import wayne.com.githubusers.ProfileView
 import wayne.com.githubusers.R
 import wayne.com.githubusers.networking.User

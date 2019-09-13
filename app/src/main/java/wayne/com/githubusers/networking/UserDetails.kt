@@ -9,5 +9,4 @@ class UserDetails(
     val followers : Int,
     val following : Int,
     val bio : String
-) {
-}
+)
