@@ -21,15 +21,39 @@ class ProfileView : AppCompatActivity() {
     private lateinit var userDetails : UserDetails
     val adapter = ProfileAdapter()
     private val retrofit : Retrofit by inject()
+    private val service: GithubAPI = retrofit.create(GithubAPI::class.java)
+    private val profileName = intent.getStringExtra("name")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile_view)
         recyclerView_profile.layoutManager = LinearLayoutManager(this)
         recyclerView_profile.adapter = adapter
-        val profileName = intent.getStringExtra("name")
 
-        val service = retrofit.create(GithubAPI::class.java)
+
+        callServiceUser()
+        callServiceList()
+
+
+        profile_search.isIconified = false
+        profile_search.clearFocus()
+        profile_search.setOnQueryTextListener( object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    adapter.filterList(newText)
+                }
+                return false
+            }
+
+        })
+
+    }
+    private fun callServiceUser(){
+
         service.user(profileName).enqueue(object : Callback<UserDetails>{
             override fun onFailure(call: Call<UserDetails>, t: Throwable) {
                 println(t.localizedMessage)
@@ -51,6 +75,9 @@ class ProfileView : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun callServiceList(){
 
         service.listRepos(profileName).enqueue(object : Callback<List<Repo>> {
             override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
@@ -65,22 +92,5 @@ class ProfileView : AppCompatActivity() {
             }
 
         })
-
-        profile_search.isIconified = false
-        profile_search.clearFocus()
-        profile_search.setOnQueryTextListener( object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                if (newText != null) {
-                    adapter.filterList(newText)
-                }
-                return false
-            }
-
-        })
-
     }
 }

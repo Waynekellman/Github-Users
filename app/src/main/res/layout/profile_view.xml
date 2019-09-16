@@ -31,6 +31,14 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/biography"/>
+        <include layout="@layout/no_network_response" android:id="@+id/no_network_response_profile"
+                 android:layout_height="100dp" android:layout_width="match_parent"
+                 android:visibility="invisible"
+                 app:layout_constraintBottom_toBottomOf="@+id/recyclerView_profile"
+                 app:layout_constraintTop_toTopOf="@+id/recyclerView_profile"
+                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+
         <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
